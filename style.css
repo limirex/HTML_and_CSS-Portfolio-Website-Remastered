@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    
+    @media screen and  (min-width: 600px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+
+        .logo {
+            grid-area: 1/span 2;
+        }
+
+    }
+
+     @media screen and  (min-width: 850px){
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        height: 60px;
+
+        .logo {
+            grid-column:1/1;
+            margin-top: 0;
+        }
+
+        
+    }
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.search-box {
+    display: flex;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.search-box input {
+    padding: 5px;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    outline: none;
+}
+
+nav {
+    display: flex;
+    font-size: 13px;
+    gap: 20px;
+    /* align-self: space-around; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @media screen and  (min-width: 850px) {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    
+}
+
+nav a {
+    color: white;
+    text-decoration: 0;
+}
+
+.hero-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 0px 50px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+}
+
+#gradient-background {
+    background: linear-gradient(300deg, #f2f2f2, #bfbfbf, #dbdbdb);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-container {
+    display: grid;
+    place-items: center;
+
+    .hero-text {
+        grid-area: 1/1;
+        order: 1;
+        align-self: end;
+        text-align: center;
+        width: 80%;
+        color: white;
+        background-color: rgba(0, 0, 255, .2);
+        border-radius: 40px;
+        margin-bottom: 30px;
+    }
+
+    .hero-text > p {
+        font-weight: bold;
+        
+    }
+
+    .hero-image {
+        grid-area: 1/1;
+    }
+
+    @media screen and  (min-width: 960px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        place-items: center;
+
+        .hero-text {
+            grid-column: 1/2;
+            color: black;
+            background-color: unset;
+            align-self: auto;
+            font-size:1rem;
+        }
+
+        .hero-image {
+            grid-column: 2/3;
+        }
+    }
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.about-image > img {
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.about-me-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #222;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 2s;
+    color: white;
+    
+}
+
+.divider {
+    width: 80%;
+    height: 3px;
+    background-color: #ddd;
+    margin: 60px auto;
+     /*display: flex;
+    align-items: center;
+    margin: 60px 0;*/
+}
+
+.skills-container {
+    display: grid;
+    gap: 50px;
+    justify-content: center;
+
+    @media screen and  (min-width: 600px){
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+
+        .three {
+            grid-column: 1/span 2;
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 2fr;
+        }
+
+        .search-box {
+            grid-area: 2/1;
+        }
+    }
+
+     @media screen and  (min-width: 1060px) {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .one {
+            grid-column: 1/2;
+        }
+
+        .two {
+            grid-column: 2/3;
+        }
+
+        .three {
+            grid-column: 3/4;
+        }
+     }
+}
+
+.skills {
+    text-align: center;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.skill {
+    width: 200px; 
+    height: 200px;
+    background-color: #dbdbdb;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+}
+
+.skill-circle {
+    background-color: #f2f2f2;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.skill-text {
+    margin-top: 10px;
+}
+
+.skill-text > h3 {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.skill-text > p {
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+#contact {
+    background-color: #dbdbdb;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+}
+
+#contact p {
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.input-row input {
+    flex: 1;
+}
+
+input,textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.send-btn {
+    padding: 15px 35px;
+    border: none;
+    background-color: #222;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 2s;
+    color: white;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+
+.s-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px; 
+}
+
+.icon {
+    margin-top: 30px;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    height: auto;
+}
+
+.footer-note {
+    padding-bottom: 30px;
+}
